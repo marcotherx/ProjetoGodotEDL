@@ -85,14 +85,14 @@ size = Vector2(665, 35)
 script = ExtResource("1_162oj")
 
 [node name="anime" type="AnimatedSprite2D" parent="player"]
-position = Vector2(76, 97)
+position = Vector2(134, 250)
 sprite_frames = SubResource("SpriteFrames_m8nop")
 animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.0802737
 
 [node name="Collision" type="CollisionShape2D" parent="player"]
-position = Vector2(71, 98)
+position = Vector2(124, 246)
 shape = SubResource("CapsuleShape2D_d0x4u")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
