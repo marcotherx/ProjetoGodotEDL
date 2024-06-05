@@ -19,11 +19,19 @@ config/icon="res://icon.svg"
 window/size/viewport_width=640
 window/size/viewport_height=320
 window/stretch/mode="viewport"
+window/stretch/scale=2.0
 
 [github_to_itch]
 
 config/itch_username=""
 config/itch_project_name=""
+
+[layer_names]
+
+2d_physics/layer_1="player"
+2d_physics/layer_2="world"
+2d_physics/layer_3="enemies"
+2d_physics/layer_4="items"
 
 [rendering]
 
