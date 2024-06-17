@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dtyo5fgk2egbp"]
+[gd_scene load_steps=21 format=3 uid="uid://dtyo5fgk2egbp"]
 
 [ext_resource type="Texture2D" uid="uid://bsueukxtkf886" path="res://assets/Seasonal Tilesets/1 - Grassland/Terrain (16 x 16).png" id="1_eg1av"]
 [ext_resource type="Texture2D" uid="uid://bf0e6q5ae0re2" path="res://assets/Seasonal Tilesets/1 - Grassland/Grassland_entities (16 x 16).png" id="2_feleb"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://cvuljofo10fy2" path="res://assets/Seasonal Tilesets/1 - Grassland/Background parts/2 - Hills.png" id="8_npwiq"]
 [ext_resource type="Texture2D" uid="uid://pihog8srbj46" path="res://assets/Seasonal Tilesets/1 - Grassland/Background parts/1 - Foreground_scenery.png" id="9_h151o"]
 [ext_resource type="PackedScene" uid="uid://ct7s5thv7wiap" path="res://presets/plataformas.tscn" id="11_tqufd"]
+[ext_resource type="PackedScene" uid="uid://bl6o2xgpbl53h" path="res://actors/enemy.tscn" id="13_l8amj"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_ppnel"]
 tile_data = PackedInt32Array(0, 589825, 1)
@@ -411,3 +412,6 @@ motion_mirroring = Vector2(432, 0)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("9_h151o")
 centered = false
+
+[node name="enemy" parent="." instance=ExtResource("13_l8amj")]
+position = Vector2(198, 184)
