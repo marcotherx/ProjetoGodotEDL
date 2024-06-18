@@ -1,12 +1,9 @@
-[gd_scene load_steps=22 format=3 uid="uid://dp736kmgbicsj"]
+[gd_scene load_steps=23 format=3 uid="uid://dp736kmgbicsj"]
 
 [ext_resource type="Script" path="res://levels/scripts/player.gd" id="1_hs0hg"]
 [ext_resource type="Texture2D" uid="uid://bvgu3cblbm3wr" path="res://assets/Sprite Pack 7/2 - Holly/Running (32 x 32).png" id="2_8flcb"]
 [ext_resource type="Texture2D" uid="uid://cvteo87icguvp" path="res://assets/Sprite Pack 7/2 - Holly/Idle (32 x 32).png" id="2_dkhw6"]
 [ext_resource type="Texture2D" uid="uid://be6cgkyd5deqj" path="res://assets/Sprite Pack 7/2 - Holly/Jump (32 x 32).png" id="4_k17b4"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d0x4u"]
-height = 28.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0ed0a"]
 atlas = ExtResource("2_8flcb")
@@ -134,24 +131,17 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d0x4u"]
+radius = 11.0
+height = 28.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h74a2"]
+size = Vector2(23, 24)
+
 [node name="player" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 29
 script = ExtResource("1_hs0hg")
-
-[node name="Collision" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(0, -14)
-shape = SubResource("CapsuleShape2D_d0x4u")
-
-[node name="Camera" type="Camera2D" parent="."]
-visible = false
-limit_left = 0
-limit_smoothed = true
-position_smoothing_enabled = true
-drag_horizontal_enabled = true
-drag_left_margin = 0.0
-drag_right_margin = 0.0
-editor_draw_limits = true
-editor_draw_drag_margin = true
 
 [node name="anime" type="AnimatedSprite2D" parent="."]
 position = Vector2(4, -14)
@@ -161,3 +151,21 @@ autoplay = "idle"
 frame_progress = 0.465371
 
 [node name="Animation" type="AnimationPlayer" parent="."]
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(4, -14)
+shape = SubResource("CapsuleShape2D_d0x4u")
+
+[node name="hurtbox" type="Area2D" parent="."]
+visible = false
+collision_layer = 0
+collision_mask = 4
+
+[node name="Collision" type="CollisionShape2D" parent="hurtbox"]
+position = Vector2(4, -15)
+shape = SubResource("RectangleShape2D_h74a2")
+
+[node name="Remote" type="RemoteTransform2D" parent="."]
+
+[connection signal="body_entered" from="hurtbox" to="." method="_on_hurtbox_body_entered"]
