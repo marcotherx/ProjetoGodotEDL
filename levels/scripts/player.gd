@@ -48,7 +48,7 @@ func _physics_process(delta):
 func _on_hurtbox_body_entered(body):
 	#if body.is_in_group("enemies"):
 		#queue_free()
-	if player_life <= 0:
+	if player_life < 0:
 		queue_free()
 	else:
 		if $ray_right.is_colliding():
@@ -66,6 +66,6 @@ func take_damage(knockback_force := Vector2.ZERO, duration := 0.25):
 		knockback_vector = knockback_force
 		
 		var knockback_tween := get_tree().create_tween()
-		knockback_tween.prallel().tween_property(self, "knockback_vector", Vector2.ZERO, duration)
+		knockback_tween.parallel().tween_property(self, "knockback_vector", Vector2.ZERO, duration)
 		animacaof.modulate = Color(1, 0, 0, 1)
 		knockback_tween.parallel().tween_property(animacaof, "modulate", Color(1,1,1,1), duration)

@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://levels/scripts/hitb.gd" id="1_tvpv0"]
 
 [node name="hitb" type="Area2D"]
+visible = false
 collision_layer = 16
 script = ExtResource("1_tvpv0")
 

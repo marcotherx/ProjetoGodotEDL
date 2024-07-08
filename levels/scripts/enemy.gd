@@ -28,17 +28,23 @@ func _physics_process(delta: float) -> void:
 		texture.flip_h = false
 	velocity.x = direction * SPEED * delta
 
+
+	
+
 	move_and_slide()
-
-
-
-
-
-
-
-
-
-
-func _on_anim_animation_finished(anim_name):
+	
+	
+func _on_anim_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "hurt":
 		queue_free()
+		
+
+
+
+
+
+
+
+
+
+
