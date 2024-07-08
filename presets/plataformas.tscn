@@ -10,6 +10,7 @@ size = Vector2(32, 16)
 script = ExtResource("1_k6kfd")
 
 [node name="plataforma" type="AnimatableBody2D" parent="."]
+collision_layer = 2
 
 [node name="sprite" type="Sprite2D" parent="plataforma"]
 texture = ExtResource("1_cbnec")

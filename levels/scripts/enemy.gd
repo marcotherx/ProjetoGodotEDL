@@ -12,6 +12,7 @@ var direction := 1
 var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 
+
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
@@ -28,6 +29,11 @@ func _physics_process(delta: float) -> void:
 	velocity.x = direction * SPEED * delta
 
 	move_and_slide()
+
+
+
+
+
 
 
 
