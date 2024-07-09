@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-const SPEED = 2670.0
+const SPEED = 2970.0
 const JUMP_VELOCITY = -400.0
 
 @onready var wall := $wall as RayCast2D
@@ -36,6 +36,7 @@ func _physics_process(delta: float) -> void:
 	
 func _on_anim_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "hurt":
+		Globals.score += 100
 		queue_free()
 		
 
